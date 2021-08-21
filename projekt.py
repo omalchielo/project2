@@ -53,9 +53,6 @@ def porovnani(tip,cislo,pokusy,zacatek):
                     cows += 1
     konec_hry(bulls,cows,pokusy,zacatek)
 
-
-
-
 def konec_hry(bulls,cows,pokusy,zacatek):
     if bulls == 4:
         konec = time.time()
