@@ -31,16 +31,12 @@ def nahodne_cislo():
 def moje_cislo(tip):
     if len(tip) != 4:
         print('musis zadat 4 ciferne cislo')
-        main()
     if len(tip) != len(set(tip)):
         print('cislo nesmi obsahovat duplicity')
-        main()
     if tip.isalpha():
         print('nesmi byt jine znaky nez cislice')
-        main()
     if tip[0] == '0':
         print('nesmi byt nula na zacatku')
-        main()
 
 def porovnani(tip,cislo,pokusy,zacatek):
     a = []
