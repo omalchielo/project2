@@ -41,17 +41,20 @@ def moje_cislo(tip):
 def porovnani(tip,cislo,pokusy,zacatek):
     a = []
     bulls = cows = 0
-    for i in range(4):
+    for i in range(len(tip)):
         if cislo[i] == tip[i]:
             bulls += 1
 
-    for j in range(4):
+    for j in range(len(tip)):
         if cislo[j] != tip[j]:
             if cislo[j] in tip:
                 if cislo[j] not in a:
                     a.append(j)
                     cows += 1
     konec_hry(bulls,cows,pokusy,zacatek)
+
+
+
 
 def konec_hry(bulls,cows,pokusy,zacatek):
     if bulls == 4:
