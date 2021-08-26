@@ -13,6 +13,7 @@ def main():
     pokusy = 0
     cislo = nahodne_cislo()
     zacatek = time.time()
+    print(cislo)
     while True:
         tip = input("Zadej cislo: ")
         print(carky())
@@ -29,14 +30,20 @@ def nahodne_cislo():
     return cislo
 
 def moje_cislo(tip):
+    vysledek = False
     if len(tip) != 4:
         print('musis zadat 4 ciferne cislo')
+        vysledek = True
     if len(tip) != len(set(tip)):
         print('cislo nesmi obsahovat duplicity')
-    if tip.isalpha():
+        vysledek = True
+    if not tip.isdigit():
         print('nesmi byt jine znaky nez cislice')
+        vysledek = True
     if tip[0] == '0':
         print('nesmi byt nula na zacatku')
+        vysledek = True
+    return vysledek
 
 def porovnani(tip,cislo,pokusy,zacatek):
     a = []
@@ -44,6 +51,7 @@ def porovnani(tip,cislo,pokusy,zacatek):
     for i in range(len(tip)):
         if cislo[i] == tip[i]:
             bulls += 1
+
 
     for j in range(len(tip)):
         if cislo[j] != tip[j]:
